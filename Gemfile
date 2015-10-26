@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.2.2'
 
+gem 'themoviedb'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use SCSS for stylesheets
@@ -39,6 +40,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
+  gem 'simplecov', :require => false, :group => :test
 end
 
 group :test do

@@ -1,0 +1,22 @@
+%h1 The following movies containing #{params['search']} were found on TMDb
+
+= form_tag :action => 'add_tmdb' do
+
+  %table#movies
+    %thead
+      %tr
+        %th Movie Title
+        %th Rating
+        %th Release Date
+        %th Select
+    %tbody
+      - @movies.each do |movie|
+        %tr
+          %td= movie[:title] 
+          %td= movie[:rating]
+          %td= movie[:release_date]
+          %td= check_box_tag "mov[#{movie[:tmdb_id]}]"
+        
+  = submit_tag 'Add Selected Movies', :id => 'add_tmdb'
+<br/>
+= link_to 'Return to Movie List', movies_path
